@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My love for Github</title>
+		<style>
+			@import url('http://fonts.googleapis.com/css?family=Architects+Daughter');
+			@import url('http://fonts.googleapis.com/css?family=Rock+Salt');
+			body {
+
+			}
+			#main, #mainblood {
+				/*background: pink;*/
+				border: 4px solid lightblue;
+				border-top: none;
+				position: relative;
+				width: 500px;
+				margin: 0 auto;
+				border-bottom-right-radius: 80px;
+				border-bottom-left-radius: 80px; 
+				text-align: justify;
+				padding: 35px;
+				font-family: Architects Daughter, sans-serif;
+				font-size: 22px;
+				line-height: 35px;
+				z-index: -10;
+			}
+			#signature {
+				margin-top: 30px;
+			}
+			#name {
+				font-family: Rock Salt, serif;
+				font-size: 35px;
+				text-align: center;
+				margin-top: 20px;
+				display: block;
+			}
+			#pipe, #pipeblood {
+				border: 4px solid lightblue;
+				border-top: 4px solid white;
+				border-bottom: 4px solid white;
+				position: relative;
+				background: white;
+				width: 35px;
+				height: 80px;
+				z-index: -5;
+				margin: -4px auto;
+			}
+			#mainblood {
+				position: absolute;
+				border: none;
+				height: 540px;
+				top: 0px;
+				left: 0px;
+				z-index: -2;
+				background: rgba(255, 0, 0, 0.6);
+			}
+			#pipeblood {
+				position: absolute;
+				border: none;
+				height: 84px;
+				top: 0px;
+				left: 0px;
+				z-index: -2;
+				background: rgba(255, 0, 0, 0.6);
+			}
+			@-webkit-keyframes mainbloodAnim {
+				/*0% { bottom: 0; }*/
+				50% { height: 80px; top: 530px; width: 570px; padding: 0px; left: 0px; }
+				100% { height: 0px; top: 610px; width: 410px; padding: 0px; left: 80px; }
+			}
+			@-webkit-keyframes pipebloodAnim {
+				100% { height: 0px; top: 84px; }
+			}
+
+			#heart {
+				/*background: pink;*/
+				display: block;
+				width: 97px;
+				margin: 40px auto;
+			}
+			#bump1, #bump2 {
+				border: 4px solid lightpink;
+				background: lightpink;
+				display: inline-block;
+				height: 40px;
+				width: 40px;
+				border-radius: 25px;
+			}
+			#point {
+				border: 4px solid lightpink;
+				background: lightpink;
+				height: 50px;
+				width: 50px;
+				-webkit-transform: rotate(45deg);
+				margin-left: 19px;
+				margin-top: -40px;
+				border-top-left-radius: 50px;
+			}
+			@-webkit-keyframes heartAnim {
+				100% {	border: 4px solid red; background: red; }
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="main">
+			Github, I love you.  I know you're dating BitBucket, but I'm not afraid of him anymore.  Just because there's a goalie doesn't mean I can't score.  I'm a CSCI major, so I'm gonna be spending a lot of time with you anyway, and we have sooooooo much history.  Like, pull requests literally from years ago.  You know that I'm an open book, and you're open source, so there's no reason we can't just be adults about this.  Go be with who you love (me) and quit wasting your time with beta programs.  They're not man enough for you.
+			<div id="signature">With love, <span id="name">Spence</span></div>
+			<div id="mainblood"></div>
+		</div>
+		<div id="pipe">
+			<div id="pipeblood"></div>
+		</div>
+
+		<div id="heart">
+			<div id="bump1"></div><div id="bump2"></div><div id="point"></div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				setTimeout( function() {
+					$('#mainblood').css('-webkit-animation', 'mainbloodAnim 3s');
+					$('#mainblood').css('-webkit-animation-fill-mode', 'forwards');
+
+					$('#heart').children().css('-webkit-animation', 'heartAnim 12s');
+					$('#heart').children().css('-webkit-animation-fill-mode', 'forwards');
+				}, 1000)
+
+				setTimeout( function() {
+					$('#pipeblood').css('-webkit-animation', 'pipebloodAnim 2s');
+					$('#pipeblood').css('-webkit-animation-fill-mode', 'forwards');
+				}, 4000)
+				
+				// var newHeight = mainHeight + 50
+				// setTimeout(function() {
+				// 	$('#mainblood').css('height', mainHeight);
+				// }, 300);	
+			});
+
+		</script>
+
+	</body>
+</html>
